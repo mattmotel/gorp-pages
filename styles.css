@@ -12,7 +12,7 @@
 
 @font-face {
     font-family: 'GORPAZ Light';
-    src: url('fonts/GORPAZ-Light_otf.woff2') format('woff2');
+    src: url('fonts/GORPAz-Light_otf.woff2') format('woff2');
     font-display: swap;
 }
 
@@ -24,7 +24,7 @@
 
 @font-face {
     font-family: 'GORPAZ Regular';
-    src: url('fonts/GORPAZ-Regular_otf.woff2') format('woff2');
+    src: url('fonts/GORPAz-Regular_otf.woff2') format('woff2');
     font-display: swap;
 }
 
