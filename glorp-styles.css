@@ -1,6 +1,6 @@
 body {
     min-height: 100vh;
-    padding-bottom: 4rem;
+    padding-bottom: 8rem;
     overflow-x: hidden;
 }
 
@@ -46,6 +46,20 @@ body {
     }
 }
 
+@media (max-width: 375px) {
+    .transmission-intro {
+        font-size: 1rem;
+        letter-spacing: 0.03em;
+        gap: 0.3rem;
+    }
+    
+    .transmission-text {
+        text-shadow: 
+            0 0 3px var(--neon-green),
+            0 0 6px var(--neon-green);
+    }
+}
+
 .transmission-text {
     animation: glitch 0.3s infinite;
     text-shadow: 
@@ -57,7 +71,7 @@ body {
     max-width: 800px;
     margin: 2rem auto;
     padding: 2rem;
-    padding-bottom: calc(50vh + 4rem);
+    padding-bottom: 80vh;
 }
 
 .chat-message {
