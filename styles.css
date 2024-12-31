@@ -18,7 +18,7 @@
 
 @font-face {
     font-family: 'GORPAZ Medium';
-    src: url('fonts/GORPAZ-Medium_otf.woff2') format('woff2');
+    src: url('fonts/GORPAz-Medium_otf.woff2') format('woff2');
     font-display: swap;
 }
 
@@ -30,7 +30,7 @@
 
 @font-face {
     font-family: 'GORPAZ Semi Bold';
-    src: url('fonts/GORPAZ-Semi-Bold_otf.woff2') format('woff2');
+    src: url('fonts/GORPAz-Semi-Bold_otf.woff2') format('woff2');
     font-display: swap;
 }
 
