@@ -1,36 +1,36 @@
 @font-face {
     font-family: 'GORPAZ Bold';
-    src: url('../fonts/GORPAz-Bold_otf.woff2') format('woff2');
+    src: url('fonts/GORPAz-Bold_otf.woff2') format('woff2');
     font-display: swap;
 }
 
 @font-face {
     font-family: 'GORPAZ ExtraLight';
-    src: url('../fonts/GORPAz-ExtraLight_otf.woff2') format('woff2');
+    src: url('fonts/GORPAz-ExtraLight_otf.woff2') format('woff2');
     font-display: swap;
 }
 
 @font-face {
     font-family: 'GORPAZ Light';
-    src: url('../fonts/GORPAZ-Light_otf.woff2') format('woff2');
+    src: url('fonts/GORPAZ-Light_otf.woff2') format('woff2');
     font-display: swap;
 }
 
 @font-face {
     font-family: 'GORPAZ Medium';
-    src: url('../fonts/GORPAZ-Medium_otf.woff2') format('woff2');
+    src: url('fonts/GORPAZ-Medium_otf.woff2') format('woff2');
     font-display: swap;
 }
 
 @font-face {
     font-family: 'GORPAZ Regular';
-    src: url('../fonts/GORPAZ-Regular_otf.woff2') format('woff2');
+    src: url('fonts/GORPAZ-Regular_otf.woff2') format('woff2');
     font-display: swap;
 }
 
 @font-face {
     font-family: 'GORPAZ Semi Bold';
-    src: url('../fonts/GORPAZ-Semi-Bold_otf.woff2') format('woff2');
+    src: url('fonts/GORPAZ-Semi-Bold_otf.woff2') format('woff2');
     font-display: swap;
 }
 
