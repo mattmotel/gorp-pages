@@ -783,4 +783,90 @@ textarea:focus {
 .checkbox-item:active {
     transform: translateY(1px);
     background: rgba(currentColor, 0.15);
+}
+
+@media (max-width: 768px) {
+    .report-header {
+        padding: 1rem;
+    }
+
+    .report-title {
+        font-size: 2rem;
+        letter-spacing: 0.1em;
+        margin: 1rem 0;
+    }
+
+    .report-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .clearance-level {
+        font-size: 0.7rem;
+    }
+
+    .form-id {
+        font-size: 0.8rem;
+    }
+
+    /* Make form sections more compact */
+    .form-section {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .section-header {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    /* Stack radio and checkbox items */
+    .radio-group,
+    .checkbox-grid {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    .radio-item,
+    .checkbox-item {
+        padding: 0.8rem;
+    }
+
+    /* Adjust form controls */
+    input[type="text"],
+    input[type="date"],
+    select,
+    textarea {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    /* Make buttons stack and fill width */
+    .form-actions {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    button {
+        width: 100%;
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .report-title {
+        font-size: 1.5rem;
+    }
+
+    .report-body {
+        padding: 1rem;
+    }
+
+    /* Hide decorative elements on smallest screens */
+    .section-header::before,
+    .section-header::after,
+    .form-section::before,
+    .form-section::after {
+        display: none;
+    }
 } 

@@ -1,0 +1,82 @@
+.font-tester {
+    grid-column: span 8;
+}
+
+.warning-box {
+    grid-column: span 4;
+}
+
+.font-preview {
+    min-height: 200px;
+    padding: 2rem;
+    margin: 2rem 0;
+    background: rgba(3, 255, 0, 0.05);
+    border: double 4px var(--neon-green);
+    position: relative;
+}
+
+.preview-text {
+    font-size: 3rem;
+    line-height: 1.2;
+    color: var(--neon-green);
+    outline: none;
+    font-family: 'GORPAZ Regular', sans-serif;
+}
+
+.preview-text:focus {
+    background: rgba(3, 255, 0, 0.1);
+}
+
+/* Custom button styles */
+.weight-buttons,
+.size-control {
+    display: grid;
+    gap: 1rem;
+}
+
+.weight-buttons {
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 2rem;
+}
+
+.size-control {
+    grid-template-columns: 1fr 1fr;
+}
+
+.weight-buttons .news-button,
+.size-control .news-button {
+    background: rgba(3, 255, 0, 0.05);
+    border: 2px solid var(--neon-green);
+    color: var(--neon-green);
+    text-shadow: 0 0 10px var(--neon-green);
+    box-shadow: 
+        0 0 10px rgba(3, 255, 0, 0.2),
+        inset 0 0 10px rgba(3, 255, 0, 0.1);
+}
+
+.weight-buttons .news-button.active {
+    background: rgba(3, 255, 0, 0.2);
+    box-shadow: 
+        0 0 20px rgba(3, 255, 0, 0.4),
+        inset 0 0 20px rgba(3, 255, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .font-tester,
+    .warning-box {
+        grid-column: span 12;
+    }
+} 
+
+/* Add tighter spacing for warning box */
+.warning-box .story-content {
+    line-height: 1.2;  /* Reduced from default */
+}
+
+.warning-box .story-content p {
+    margin-bottom: 0.5rem;  /* Reduced space between paragraphs */
+}
+
+.warning-box .story-content p:last-child {
+    margin-bottom: 0;  /* Remove margin from last paragraph */
+} 

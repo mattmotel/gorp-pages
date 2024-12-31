@@ -3,87 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Font Tester</title>
+    <title>T.A.C.O.S.™ Terminal</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="news-styles.css">
 </head>
-<body>
-    <header>
-        <h1>Font Tester</h1>
-        <select id="fontSelect">
-            <option value="">Select a font...</option>
-        </select>
-    </header>
+<body class="news-body">
+    <div class="scan-line"></div>
+    <div class="terminal-overlay"></div>
+    
+    <div class="hologram-flicker">
+        <header class="news-header">
+            <div class="news-date">> GALACTIC CYCLE 25,962 • EARTH DATE 2024</div>
+            <div class="news-title-group">
+                <h1 class="news-title">T.A.C.O.S.™</h1>
+                <div class="acronym-explanation">
+                    Typography Assessment & Compliance Operating System
+                </div>
+            </div>
+            <div class="news-subtitle-small">> Official Portal of G.O.R.P.™</div>
+        </header>
 
-    <main class="specimen">
-        <div class="specimen-header">
-            <h2 id="currentFont">Select a font to begin</h2>
-            <div class="font-details">
-                <span id="fontInfo"></span>
-            </div>
-        </div>
-        
-        <div class="specimen-grid">
-            <div class="specimen-item">
-                <h3>Headline</h3>
-                <p class="size-xl">The quick brown fox jumps over the lazy dog</p>
-            </div>
-            
-            <div class="specimen-item">
-                <h3>Body Text</h3>
-                <p class="size-md">Typography is the art and technique of arranging type to make written language legible, readable and appealing when displayed.</p>
-            </div>
+        <main class="news-grid">
+            <article class="green-article">
+                <div class="article-corner corner-tl"></div>
+                <div class="article-corner corner-tr"></div>
+                <div class="article-corner corner-bl"></div>
+                <div class="article-corner corner-br"></div>
+                <h2 class="headline">B.U.R.G.E.R.™ News Terminal</h2>
+                <p class="byline">> Bureaucratic Universal Report on Galactic Editorial Regulations</p>
+                <div class="story-content">
+                    <p>Access the latest updates on Earth's Typography Revolution and GORP™ mandate enforcement. Read about the ongoing conflict between Colonel Aperol T. Spritz and the PROG™ resistance movement.</p>
+                    <a href="news.html" class="news-button">ACCESS NEWS TERMINAL</a>
+                </div>
+            </article>
 
-            <div class="specimen-item">
-                <h3>Characters</h3>
-                <p class="size-lg">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
-                <p class="size-lg">abcdefghijklmnopqrstuvwxyz</p>
-                <p class="size-lg">0123456789</p>
-                <p class="size-lg">!@#$%^&*()_+-=[]{}|;:'",./<>?</p>
-            </div>
-        </div>
-    </main>
+            <article class="purple-article">
+                <h2 class="headline">F.R.I.E.S.™ Report System</h2>
+                <p class="byline">> Federal Registry of Illicit Enforcement & Surveillance</p>
+                <div class="story-content">
+                    <p>Submit official typography violation reports. Document suspicious font activity, unauthorized ligature usage, and potential PROG™ sympathizer sightings.</p>
+                    <a href="report.html" class="news-button">FILE NEW REPORT</a>
+                </div>
+            </article>
+
+            <article class="orange-article">
+                <h2 class="headline">P.I.Z.Z.A.™ Scanner Terminal</h2>
+                <p class="byline">> Prohibited Ideograph Zone & Zero-tolerance Authority</p>
+                <div class="story-content">
+                    <p>Analyze suspicious typography for compliance with GORP™ standards. Detect and report non-standard fonts, illegal kerning, and decorative swashes.</p>
+                    <a href="scanner.html" class="news-button">INITIATE SCAN</a>
+                </div>
+            </article>
+
+            <article class="purple-article">
+                <h2 class="headline">N.A.C.H.O.S.™ Terminal</h2>
+                <p class="byline">> Non-Authorized Character Handling & Optical Surveillance</p>
+                <div class="story-content">
+                    <p>Test G.O.R.P.™ font weights at your own risk. This experimental terminal allows for unauthorized typographic manipulation. Warning: Usage will trigger F.R.I.E.S.™ surveillance and potential visits from Colonel Aperol T. Spritz.</p>
+                    <a href="nachos.html" class="news-button">TEST FONT WEIGHTS</a>
+                </div>
+            </article>
+        </main>
+    </div>
 
     <script>
-        // Function to load fonts from the /fonts directory
-        async function loadFonts() {
-            const fonts = [
-                { file: 'GORPAz-Bold_otf.woff2', name: 'GORPAZ Bold' },
-                { file: 'GORPAz-ExtraLight_otf.woff2', name: 'GORPAZ ExtraLight' },
-                { file: 'GORPAZ-Light_otf.woff2', name: 'GORPAZ Light' },
-                { file: 'GORPAZ-Medium_otf.woff2', name: 'GORPAZ Medium' },
-                { file: 'GORPAZ-Regular_otf.woff2', name: 'GORPAZ Regular' },
-                { file: 'GORPAZ-Semi-Bold_otf.woff2', name: 'GORPAZ Semi Bold' }
-            ];
-
-            const fontSelect = document.getElementById('fontSelect');
-            
-            // Check if fonts are loaded
-            fonts.forEach(async font => {
-                try {
-                    const fontFace = new FontFace(font.name, `url(fonts/${font.file})`);
-                    await fontFace.load();
-                    document.fonts.add(fontFace);
-                    console.log(`Loaded font: ${font.name}`);
-                    
-                    const option = document.createElement('option');
-                    option.value = font.name;
-                    option.textContent = font.name;
-                    fontSelect.appendChild(option);
-                } catch (err) {
-                    console.error(`Error loading font ${font.name}:`, err);
-                }
-            });
+        // Add scan lines
+        for(let i = 0; i < 3; i++) {
+            const scanLine = document.createElement('div');
+            scanLine.className = 'scan-line';
+            scanLine.style.animationDelay = `${i * 1}s`;
+            document.body.appendChild(scanLine);
         }
-
-        // Handle font selection
-        document.getElementById('fontSelect').addEventListener('change', (e) => {
-            const fontName = e.target.value;
-            document.querySelector('.specimen-grid').style.fontFamily = `"${fontName}", sans-serif`;
-            document.getElementById('currentFont').textContent = fontName;
-        });
-
-        // Load fonts when page loads
-        loadFonts();
     </script>
 </body>
 </html> 
