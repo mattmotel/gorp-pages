@@ -1,6 +1,5 @@
 body {
     min-height: 100vh;
-    padding-bottom: 10rem;
     overflow-x: hidden;
 }
 
@@ -71,7 +70,6 @@ body {
     max-width: 800px;
     margin: 2rem auto;
     padding: 2rem;
-    padding-bottom: 100vh;
 }
 
 .chat-message {
@@ -245,5 +243,20 @@ body {
 }
 
 .chat-message:last-child {
-    margin-bottom: 20rem;
+    margin-bottom: 4rem;
+}
+
+/* Make messages wider on mobile */
+@media (max-width: 768px) {
+    .message-content {
+        max-width: 95%; /* Wider messages on mobile */
+    }
+}
+
+/* Fix scrolling by adding a spacer div */
+.chat-container::after {
+    content: '';
+    display: block;
+    height: 50vh; /* Half viewport height of extra space */
+    width: 100%;
 } 
