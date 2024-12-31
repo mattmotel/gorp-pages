@@ -667,4 +667,70 @@
 [class*="headline"],
 .news-title {
     letter-spacing: 0.03em;
+}
+
+@media (max-width: 768px) {
+    .news-header {
+        padding: 1rem;
+    }
+
+    .news-title {
+        font-size: 2.5rem;
+    }
+
+    .news-subtitle-small,
+    .news-date,
+    .acronym-explanation {
+        font-size: 0.9rem;
+    }
+
+    .headline {
+        font-size: 1.4rem;
+    }
+
+    /* Keep the story content 2 columns but adjust font size */
+    .story-content {
+        font-size: 0.9rem;
+    }
+
+    /* Adjust grid gap */
+    .news-grid {
+        gap: 1rem;
+    }
+
+    /* Make articles full width on tablet */
+    .green-article,
+    .purple-article,
+    .orange-article {
+        grid-column: span 12;
+    }
+}
+
+@media (max-width: 480px) {
+    .news-title {
+        font-size: 1.8rem;
+    }
+
+    .headline {
+        font-size: 1.2rem;
+    }
+
+    /* Switch to single column only on mobile */
+    .story-content {
+        column-count: 1;
+        column-gap: 0;
+        min-height: auto;
+    }
+
+    /* Hide the column separator on mobile */
+    .story-content::after {
+        display: none;
+    }
+
+    /* Adjust article padding */
+    .green-article,
+    .purple-article,
+    .orange-article {
+        padding: 1rem;
+    }
 } 

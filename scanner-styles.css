@@ -1,21 +1,41 @@
 /* Scanner specific styles - everything else inherited from news-styles.css */
 
 .scanner-display {
-    min-height: 300px;
+    min-height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     overflow: hidden;
-    background: rgba(3, 255, 0, 0.02);
-    border: double 3px var(--neon-green);
+    background: 
+        repeating-linear-gradient(
+            0deg,
+            rgba(3, 255, 0, 0.03) 0px,
+            rgba(3, 255, 0, 0.03) 1px,
+            transparent 1px,
+            transparent 2px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            rgba(3, 255, 0, 0.02) 0px,
+            rgba(3, 255, 0, 0.02) 1px,
+            transparent 1px,
+            transparent 2px
+        ),
+        rgba(0, 0, 0, 0.3);
+    border: double 4px var(--neon-green);
     padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: 
+        inset 0 0 50px rgba(3, 255, 0, 0.1),
+        0 0 20px rgba(3, 255, 0, 0.2);
 }
 
 .scanner-display::before {
-    content: '[FONT ANALYSIS IN PROGRESS]';
+    content: '[ANALYZING SUSPICIOUS TYPOGRAPHY]';
     position: absolute;
-    top: 1rem;
+    top: 2rem;
     left: 50%;
     transform: translateX(-50%);
     font-family: 'GORPAZ Bold', sans-serif;
@@ -23,6 +43,7 @@
     letter-spacing: 0.2em;
     color: var(--neon-green);
     opacity: 0.7;
+    text-shadow: 0 0 10px var(--neon-green);
 }
 
 .scanner-display::after {
@@ -40,6 +61,22 @@
 .font-display {
     padding: 2rem;
     z-index: 1;
+    min-height: 200px;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.font-display::before {
+    content: '';
+    position: absolute;
+    inset: 1rem;
+    border: 1px solid rgba(3, 255, 0, 0.2);
+    background: rgba(0, 0, 0, 0.4);
+    z-index: -1;
 }
 
 .font-sample {
@@ -48,24 +85,37 @@
     white-space: nowrap;
     transition: all 0.3s ease;
     color: var(--neon-green);
-    font-family: 'GORPAZ Regular', sans-serif;
+    font-family: 'GORPAZ Bold', sans-serif;
     letter-spacing: 0.05em;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-shadow: 
+        0 0 10px var(--neon-green),
+        0 0 20px var(--neon-green);
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(3, 255, 0, 0.1);
 }
 
 /* Scan button styling - match news exactly */
 .news-button {
     width: 100%;
-    padding: 1.5rem;
-    background: transparent;
-    border: 2px solid var(--neon-green);
+    padding: 2rem;
+    background: rgba(3, 255, 0, 0.05);
+    border: double 4px var(--neon-green);
     color: var(--neon-green);
     font-family: 'GORPAZ Bold', sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.8rem;
     letter-spacing: 0.2em;
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
     margin-top: 2rem;
+    text-shadow: 0 0 10px var(--neon-green);
+    box-shadow: 
+        0 0 20px rgba(3, 255, 0, 0.2),
+        inset 0 0 20px rgba(3, 255, 0, 0.1);
 }
 
 .news-button::after {
@@ -81,8 +131,18 @@
 }
 
 .news-button:hover {
-    background: rgba(3, 255, 0, 0.1);
+    background: rgba(3, 255, 0, 0.2);
     transform: translateY(-2px);
+    box-shadow: 
+        0 0 30px rgba(3, 255, 0, 0.3),
+        inset 0 0 30px rgba(3, 255, 0, 0.2);
+}
+
+.news-button:active {
+    transform: translateY(1px);
+    box-shadow: 
+        0 0 10px rgba(3, 255, 0, 0.2),
+        inset 0 0 10px rgba(3, 255, 0, 0.1);
 }
 
 .news-button:disabled {
@@ -423,4 +483,51 @@
     text-shadow: 
         0 0 10px var(--neon-green),
         0 0 20px var(--neon-green);
+}
+
+@media (max-width: 768px) {
+    .scanner-display {
+        padding: 1rem;
+    }
+
+    .font-display {
+        padding: 1rem;
+    }
+
+    /* Keep font big, just handle overflow */
+    .font-sample {
+        font-size: 3rem;
+        overflow-x: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .alert-header {
+        font-size: 1.2rem;
+        padding: 1rem;
+    }
+
+    .news-button {
+        padding: 1.5rem;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .font-sample {
+        font-size: 2.5rem;
+    }
+
+    .scan-details {
+        font-size: 0.9rem;
+        padding: 1rem;
+    }
+
+    .warning-pattern {
+        display: none;
+    }
+
+    .news-button {
+        padding: 1.2rem;
+        font-size: 1.2rem;
+    }
 }
