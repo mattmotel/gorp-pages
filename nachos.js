@@ -4,18 +4,24 @@ document.addEventListener('DOMContentLoaded', function() {
     const sizeDown = document.querySelector('.size-down');
     const sizeUp = document.querySelector('.size-up');
     
-    let currentSize = 3; // Starting size in rem
+    let currentSize = 3;
 
     // Weight buttons
     weightButtons.forEach(button => {
         button.addEventListener('click', () => {
-            // Remove active class from all buttons
             weightButtons.forEach(btn => btn.classList.remove('active'));
-            // Add active class to clicked button
             button.classList.add('active');
             
-            // Set font weight based on button text
-            const weight = button.textContent.toLowerCase();
+            // Handle special cases
+            let weight = button.textContent;
+            if (weight === 'SEMI BOLD') {
+                weight = 'Semi Bold';
+            } else if (weight === 'EXTRA LIGHT') {
+                weight = 'ExtraLight';
+            } else {
+                weight = weight.charAt(0) + weight.slice(1).toLowerCase();
+            }
+            
             preview.style.fontFamily = `'GORPAZ ${weight}', sans-serif`;
         });
     });

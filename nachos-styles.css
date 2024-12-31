@@ -36,6 +36,7 @@
 
 .weight-buttons {
     grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
     margin-bottom: 2rem;
 }
 
@@ -66,7 +67,16 @@
     .warning-box {
         grid-column: span 12;
     }
-} 
+    .weight-buttons {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .weight-buttons {
+        grid-template-columns: 1fr;
+    }
+}
 
 /* Add tighter spacing for warning box */
 .warning-box .story-content {
