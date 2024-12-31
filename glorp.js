@@ -60,7 +60,6 @@ document.addEventListener('DOMContentLoaded', function() {
             await typeWriter(content, text);
 
             if (message.classList.contains('exploding')) {
-                await new Promise(resolve => setTimeout(resolve, 500));
                 message.classList.add('boom');
                 document.body.style.animation = 'screenFlash 1s ease-out, shake 0.5s ease-in-out';
                 setTimeout(() => {
@@ -68,6 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }, 1000);
             }
 
+            await new Promise(resolve => setTimeout(resolve, 500));
             scrollToLatest(message);
         }
     }
