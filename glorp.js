@@ -64,12 +64,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.body.style.animation = 'screenFlash 1s ease-out, shake 0.5s ease-in-out';
                 await new Promise(resolve => setTimeout(resolve, 1000));
                 document.body.style.animation = '';
+                
+                // Force scroll after explosion
+                window.scrollTo({
+                    top: window.scrollY + 300,
+                    behavior: 'smooth'
+                });
+            } else {
+                // Normal scroll for other messages
+                scrollToLatest(message);
             }
 
-            window.scrollTo({
-                top: window.scrollY + 300,
-                behavior: 'smooth'
-            });
             await new Promise(resolve => setTimeout(resolve, 500));
         }
     }
