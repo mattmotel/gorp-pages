@@ -11,9 +11,9 @@ document.addEventListener('DOMContentLoaded', function() {
         );
 
         if (!isVisible) {
-            message.scrollIntoView({
-                behavior: 'smooth',
-                block: 'end'
+            window.scrollTo({
+                top: window.scrollY + rect.top - window.innerHeight + rect.height + 300,
+                behavior: 'smooth'
             });
         }
     }
