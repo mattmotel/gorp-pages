@@ -1,0 +1,670 @@
+:root {
+    --neon-green: #03FF00;
+    --deep-black: #000000;
+    --bright-purple: #AC56FF;
+    --bright-orange: #F94A01;
+}
+
+.news-body {
+    background: var(--deep-black);
+    padding: 2rem;
+    font-family: 'GORPAZ Regular', sans-serif;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.news-header {
+    border: double 3px var(--neon-green);
+    padding: 1.5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    color: var(--neon-green);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Multiple texture layers for masthead */
+.news-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(var(--neon-green) 1px, transparent 1px),
+        repeating-linear-gradient(45deg, var(--neon-green) 0, var(--neon-green) 1px, transparent 1px, transparent 10px),
+        repeating-linear-gradient(-45deg, var(--neon-green) 0, var(--neon-green) 1px, transparent 1px, transparent 10px);
+    background-size: 10px 10px, 20px 20px, 20px 20px;
+    background-position: 0 0, 0 0, 0 0;
+    opacity: 0.05;
+    pointer-events: none;
+}
+
+/* Decorative corners for masthead */
+.news-header::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid var(--neon-green);
+    margin: 5px;
+    pointer-events: none;
+    opacity: 0.3;
+    background-image: 
+        linear-gradient(45deg, var(--neon-green) 1px, transparent 1px),
+        linear-gradient(-45deg, var(--neon-green) 1px, transparent 1px);
+    background-size: 10px 10px;
+    background-position: 0 0, 0 0;
+}
+
+/* Title enhancements */
+.news-title {
+    font-family: 'GORPAZ Bold', sans-serif;
+    font-size: 4.5rem;
+    letter-spacing: 0.2em;
+    margin: 1rem 0;
+    display: block;
+    position: relative;
+    padding: 0.5rem 2rem;
+    text-align: center;
+    line-height: 1;
+}
+
+.news-title::before,
+.news-title::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    opacity: 0.3;
+}
+
+.news-title::before {
+    top: 0;
+    left: 0;
+    border-top: 2px solid var(--neon-green);
+    border-left: 2px solid var(--neon-green);
+    background-image: radial-gradient(var(--neon-green) 1px, transparent 1px);
+    background-size: 4px 4px;
+}
+
+.news-title::after {
+    bottom: 0;
+    right: 0;
+    border-bottom: 2px solid var(--neon-green);
+    border-right: 2px solid var(--neon-green);
+    background-image: radial-gradient(var(--neon-green) 1px, transparent 1px);
+    background-size: 4px 4px;
+}
+
+/* Date styling */
+.news-date {
+    position: relative;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+}
+
+.news-date::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -20px;
+    width: 15px;
+    height: 1px;
+    background: repeating-linear-gradient(
+        90deg,
+        var(--neon-green),
+        var(--neon-green) 2px,
+        transparent 2px,
+        transparent 4px
+    );
+}
+
+.news-date::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    width: 15px;
+    height: 1px;
+    background: repeating-linear-gradient(
+        90deg,
+        var(--neon-green),
+        var(--neon-green) 2px,
+        transparent 2px,
+        transparent 4px
+    );
+}
+
+/* Acronym decoration */
+.acronym-explanation {
+    font-family: 'GORPAZ Light', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    margin-top: 0.5rem;
+    opacity: 0.8;
+}
+
+/* Subtitle decoration */
+.news-subtitle-small {
+    position: relative;
+    display: inline-block;
+    padding: 0.5rem 2rem;
+    margin-top: 1rem;
+}
+
+.news-subtitle-small::before,
+.news-subtitle-small::after {
+    content: '•••';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.8rem;
+    letter-spacing: 0.3em;
+    opacity: 0.5;
+}
+
+.news-subtitle-small::before {
+    left: 0;
+}
+
+.news-subtitle-small::after {
+    right: 0;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2rem;
+}
+
+/* Green Article */
+.green-article {
+    grid-column: span 6;
+    color: var(--neon-green);
+    border: double 3px var(--neon-green);
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.green-article .headline,
+.green-article .byline,
+.green-article .story-content {
+    color: var(--neon-green);
+}
+
+.green-article::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(
+        currentColor 1px,
+        transparent 1px
+    );
+    background-size: 10px 10px;
+    opacity: 0.05;
+    pointer-events: none;
+}
+
+/* Purple Article */
+.purple-article {
+    grid-column: span 6;
+    color: var(--bright-purple);
+    border: double 3px var(--bright-purple);
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.purple-article .headline,
+.purple-article .byline,
+.purple-article .story-content {
+    color: var(--bright-purple);
+}
+
+.purple-article::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(
+        currentColor 1px,
+        transparent 1px
+    );
+    background-size: 10px 10px;
+    opacity: 0.05;
+    pointer-events: none;
+}
+
+/* Orange Article */
+.orange-article {
+    grid-column: span 6;
+    color: var(--bright-orange);
+    border: double 3px var(--bright-orange);
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.orange-article .headline,
+.orange-article .byline,
+.orange-article .story-content {
+    color: var(--bright-orange);
+}
+
+.orange-article::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(
+        currentColor 1px,
+        transparent 1px
+    );
+    background-size: 10px 10px;
+    opacity: 0.05;
+    pointer-events: none;
+}
+
+/* Typography */
+.headline {
+    font-family: 'GORPAZ Bold', sans-serif;
+    font-size: 1.8rem;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    letter-spacing: 0.02em;
+    position: relative;
+    padding-left: 1rem;
+}
+
+.headline::before {
+    content: '••';
+    position: absolute;
+    left: 0;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.byline {
+    font-family: 'GORPAZ Light', sans-serif;
+    font-size: 0.8rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px dotted currentColor;
+    padding-bottom: 0.5rem;
+    position: relative;
+}
+
+.byline::after {
+    content: '• • •';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    letter-spacing: 0.3em;
+    font-size: 0.6rem;
+}
+
+.story-content {
+    font-family: 'GORPAZ Regular', sans-serif;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    column-count: 2;
+    column-gap: 1.5rem;
+    min-height: 300px;
+    position: relative;
+}
+
+.story-content p {
+    margin-bottom: 0.8em;
+    text-align: justify;
+    hyphens: auto;
+}
+
+.story-content p:first-of-type::first-letter {
+    font-size: 2.8em;
+    float: left;
+    padding: 0.05em 0.2em 0 0;
+    line-height: 0.9;
+    font-family: 'GORPAZ Bold', sans-serif;
+    margin-right: 0.2em;
+}
+
+/* Scan lines and effects */
+.scan-line {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: rgba(3, 255, 0, 0.3);
+    animation: scanline 8s linear infinite;
+    z-index: 1000;
+    box-shadow: 0 0 4px rgba(3, 255, 0, 0.4);
+}
+
+.terminal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        repeating-linear-gradient(
+            0deg,
+            rgba(3, 255, 0, 0.1) 0px,
+            transparent 1px,
+            transparent 2px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            rgba(3, 255, 0, 0.1) 0px,
+            transparent 1px,
+            transparent 2px
+        );
+    opacity: 0.5;
+}
+
+@keyframes scanline {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100vh); }
+}
+
+/* Classical newspaper touches */
+.article-divider {
+    border-top: 1px solid currentColor;
+    margin: 2rem 0;
+}
+
+.dropcap {
+    display: none;
+}
+
+/* Enhanced flicker effect */
+@keyframes hologramFlicker {
+    0% { opacity: 1; }
+    1% { opacity: 0.7; }
+    2% { opacity: 1; }
+    4% { opacity: 0.85; }
+    5% { opacity: 1; }
+    10% { opacity: 1; }
+    11% { opacity: 0.6; }
+    12% { opacity: 0.9; }
+    14% { opacity: 0.75; }
+    15% { opacity: 1; }
+    70% { opacity: 1; }
+    71% { opacity: 0.5; }
+    72% { opacity: 0.8; }
+    73% { opacity: 1; }
+    97% { opacity: 1; }
+    98% { opacity: 0.65; }
+    99% { opacity: 1; }
+}
+
+.hologram-flicker {
+    animation: hologramFlicker 3s infinite;
+    position: relative;
+}
+
+/* Add more scan lines with different speeds */
+.scan-line-fast {
+    composes: scan-line;
+    height: 1px;
+    animation: scanline 6s linear infinite;
+    opacity: 0.4;
+}
+
+.scan-line-slow {
+    composes: scan-line;
+    height: 2px;
+    animation: scanline 12s linear infinite;
+    opacity: 0.3;
+}
+
+/* Column rules */
+.story-content {
+    column-rule: 1px dotted currentColor;
+    padding: 0 1rem;
+}
+
+/* Add more texture details */
+.article-texture {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    opacity: 0.2;
+    background-image: 
+        repeating-linear-gradient(
+            45deg,
+            currentColor 0,
+            currentColor 1px,
+            transparent 1px,
+            transparent 50%
+        );
+    background-size: 10px 10px;
+}
+
+/* Paragraph spacing */
+.story-content p + p {
+    text-indent: 1em;
+}
+
+/* Fine details */
+::selection {
+    background: currentColor;
+    color: var(--deep-black);
+}
+
+/* Corner decorations for articles */
+.green-article::after,
+.purple-article::after,
+.orange-article::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    background-image: 
+        linear-gradient(45deg, transparent 50%, currentColor 50%),
+        radial-gradient(currentColor 1px, transparent 2px);
+    background-size: 10px 10px, 8px 8px;
+    opacity: 0.2;
+}
+
+/* Bottom corner pixel pattern */
+.green-article::before,
+.purple-article::before,
+.orange-article::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(currentColor 1px, transparent 1px),
+        repeating-linear-gradient(
+            45deg,
+            currentColor 0,
+            currentColor 1px,
+            transparent 1px,
+            transparent 8px
+        );
+    background-size: 10px 10px, 20px 20px;
+    background-position: 0 0, 10px 10px;
+    opacity: 0.05;
+    pointer-events: none;
+}
+
+/* Header decoration */
+.headline::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background-image: 
+        radial-gradient(currentColor 1px, transparent 2px),
+        repeating-linear-gradient(
+            -45deg,
+            currentColor 0,
+            currentColor 1px,
+            transparent 1px,
+            transparent 6px
+        );
+    background-size: 6px 6px, 12px 12px;
+    opacity: 0.2;
+}
+
+/* Byline pixel decoration */
+.byline::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 20px;
+    height: 20px;
+    background-image: 
+        repeating-linear-gradient(
+            90deg,
+            currentColor 0,
+            currentColor 1px,
+            transparent 1px,
+            transparent 4px
+        );
+    opacity: 0.3;
+}
+
+/* Column separator decoration */
+.story-content {
+    position: relative;
+}
+
+.story-content::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 2px;
+    height: 80%;
+    background-image: 
+        repeating-linear-gradient(
+            0deg,
+            currentColor 0,
+            currentColor 1px,
+            transparent 1px,
+            transparent 4px
+        );
+    opacity: 0.2;
+}
+
+/* Article corners */
+.article-corner {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    opacity: 0.3;
+    background-image: 
+        radial-gradient(currentColor 1px, transparent 1px);
+    background-size: 4px 4px;
+}
+
+.corner-tl { top: 5px; left: 5px; }
+.corner-tr { top: 5px; right: 5px; }
+.corner-bl { bottom: 5px; left: 5px; }
+.corner-br { bottom: 5px; right: 5px; }
+
+/* Grid texture overlay */
+.news-grid::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(var(--neon-green) 1px, transparent 1px),
+        linear-gradient(90deg, var(--neon-green) 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.03;
+    pointer-events: none;
+}
+
+.news-title-group {
+    margin: 2rem 0;
+    position: relative;
+}
+
+/* Enhance headline hierarchy */
+.headline {
+    font-feature-settings: "liga" 1, "dlig" 1, "kern" 1; /* Enable ligatures and kerning */
+    text-rendering: optimizeLegibility;
+    font-variant-numeric: oldstyle-nums; /* Use old-style figures */
+}
+
+/* Add subtle hanging punctuation */
+.story-content p {
+    text-indent: -0.5em;
+    padding-left: 0.5em;
+}
+
+/* Enhance bylines */
+.byline {
+    font-variant-caps: small-caps; /* Use small caps for bylines */
+    letter-spacing: 0.03em;
+}
+
+/* Better paragraph rhythm */
+.story-content p + p {
+    margin-top: 1.4em; /* Golden ratio-based spacing */
+}
+
+/* Enhance acronyms */
+.acronym-explanation {
+    font-variant-caps: all-small-caps;
+    letter-spacing: 0.05em;
+}
+
+/* Better hyphenation control */
+.story-content {
+    hyphenate-limit-chars: 6 3 2;
+    hyphenate-limit-lines: 2;
+    hyphenate-limit-last: always;
+    hanging-punctuation: first last;
+}
+
+/* Enhance numbers in text */
+.story-content {
+    font-variant-numeric: proportional-nums;
+}
+
+/* Better quote marks */
+.story-content q {
+    quotes: '‹' '›' '«' '»';
+}
+
+/* Enhance date display */
+.news-date {
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.02em;
+}
+
+/* Add subtle tracking to all-caps text */
+[class*="headline"],
+.news-title {
+    letter-spacing: 0.03em;
+} 

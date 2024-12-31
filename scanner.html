@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G.O.R.P.™ Typography Scanner</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="news-styles.css">
+    <link rel="stylesheet" href="scanner-styles.css">
+</head>
+<body class="news-body">
+    <div class="scan-line"></div>
+    <div class="terminal-overlay"></div>
+    
+    <div class="news-content">
+        <div class="hologram-flicker">
+            <!-- Header exactly like news -->
+            <header class="news-header">
+                <div class="clearance-level">[CLEARANCE LEVEL: TYPOGRAPHY ENFORCEMENT]</div>
+                <h1 class="news-title">P.I.Z.Z.A.</h1>
+                <div class="news-subtitle">
+                    <div class="acronym-line">
+                        Prohibited Ideograph Zone & Zero-tolerance Authority
+                    </div>
+                </div>
+            </header>
+
+            <!-- Scanner display using news-article style -->
+            <div class="news-article scanner-display">
+                <div class="font-display">
+                    <div class="font-sample">The quick brown fox jumps over the lazy dog</div>
+                </div>
+                <div class="scan-line-active"></div>
+            </div>
+
+            <!-- Results will appear here -->
+            <div class="news-article scan-results" style="display: none">
+                <div class="alert-header">
+                    <div class="warning-pattern left"></div>
+                    <span>VIOLATION DETECTED</span>
+                    <div class="warning-pattern right"></div>
+                </div>
+                <div class="scan-details"></div>
+            </div>
+
+            <!-- Button using news-button style -->
+            <button class="news-button">INITIATE SCAN</button>
+        </div>
+    </div>
+
+    <script src="scanner.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Tester</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Font Tester</h1>
+        <select id="fontSelect">
+            <option value="">Select a font...</option>
+        </select>
+    </header>
+
+    <main class="specimen">
+        <div class="specimen-header">
+            <h2 id="currentFont">Select a font to begin</h2>
+            <div class="font-details">
+                <span id="fontInfo"></span>
+            </div>
+        </div>
+        
+        <div class="specimen-grid">
+            <div class="specimen-item">
+                <h3>Headline</h3>
+                <p class="size-xl">The quick brown fox jumps over the lazy dog</p>
+            </div>
+            
+            <div class="specimen-item">
+                <h3>Body Text</h3>
+                <p class="size-md">Typography is the art and technique of arranging type to make written language legible, readable and appealing when displayed.</p>
+            </div>
+
+            <div class="specimen-item">
+                <h3>Characters</h3>
+                <p class="size-lg">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+                <p class="size-lg">abcdefghijklmnopqrstuvwxyz</p>
+                <p class="size-lg">0123456789</p>
+                <p class="size-lg">!@#$%^&*()_+-=[]{}|;:'",./<>?</p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Function to load fonts from the /fonts directory
+        async function loadFonts() {
+            const fonts = [
+                { file: 'GORPAz-Bold_otf.woff2', name: 'GORPAZ Bold' },
+                { file: 'GORPAz-ExtraLight_otf.woff2', name: 'GORPAZ ExtraLight' },
+                { file: 'GORPAZ-Light_otf.woff2', name: 'GORPAZ Light' },
+                { file: 'GORPAZ-Medium_otf.woff2', name: 'GORPAZ Medium' },
+                { file: 'GORPAZ-Regular_otf.woff2', name: 'GORPAZ Regular' },
+                { file: 'GORPAZ-Semi-Bold_otf.woff2', name: 'GORPAZ Semi Bold' }
+            ];
+
+            const fontSelect = document.getElementById('fontSelect');
+            
+            // Check if fonts are loaded
+            fonts.forEach(async font => {
+                try {
+                    const fontFace = new FontFace(font.name, `url(fonts/${font.file})`);
+                    await fontFace.load();
+                    document.fonts.add(fontFace);
+                    console.log(`Loaded font: ${font.name}`);
+                    
+                    const option = document.createElement('option');
+                    option.value = font.name;
+                    option.textContent = font.name;
+                    fontSelect.appendChild(option);
+                } catch (err) {
+                    console.error(`Error loading font ${font.name}:`, err);
+                }
+            });
+        }
+
+        // Handle font selection
+        document.getElementById('fontSelect').addEventListener('change', (e) => {
+            const fontName = e.target.value;
+            document.querySelector('.specimen-grid').style.fontFamily = `"${fontName}", sans-serif`;
+            document.getElementById('currentFont').textContent = fontName;
+        });
+
+        // Load fonts when page loads
+        loadFonts();
+    </script>
+</body>
+</html> 

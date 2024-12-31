@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GORP™ Typography Violation Report Terminal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="report-styles.css">
+</head>
+<body class="report-body">
+    <div class="scan-line"></div>
+    <div class="terminal-overlay"></div>
+    
+    <div class="hologram-flicker">
+        <header class="report-header">
+            <div class="clearance-level">[CLEARANCE LEVEL: F.R.I.E.S. ENFORCEMENT]</div>
+            <div class="report-title-group">
+                <h1 class="report-title">G.O.R.P.™ × F.R.I.E.S. REPORT</h1>
+                <div class="form-id">FORM TD-1984-█████</div>
+            </div>
+            <div class="report-subtitle">
+                > Federal Registry of Illicit Enforcement & Surveillance
+            </div>
+        </header>
+
+        <main class="report-form">
+            <form id="violation-report">
+                <!-- Incident Classification -->
+                <section class="form-section">
+                    <h2 class="section-header">INCIDENT CLASSIFICATION</h2>
+                    <div class="form-group">
+                        <label>Primary Violation Type:</label>
+                        <div class="radio-group">
+                            <div class="radio-item">
+                                <input type="radio" id="kerning" name="violation-type" value="kerning" required>
+                                <label for="kerning">Suspicious Kerning Behavior</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="mixing" name="violation-type" value="mixing">
+                                <label for="mixing">Unauthorized Font Mixing</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="swashes" name="violation-type" value="swashes">
+                                <label for="swashes">Possession of Decorative Swashes</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="ligatures" name="violation-type" value="ligatures">
+                                <label for="ligatures">Illegal Ligature Usage</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="serif" name="violation-type" value="serif">
+                                <label for="serif">Serif Smuggling</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="resistance" name="violation-type" value="resistance">
+                                <label for="resistance">PROG™ Sympathizer Activity</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="severity">Typographic Severity Level:</label>
+                        <select id="severity" required>
+                            <option value="">Select Severity</option>
+                            <option value="1">Level 1 - Minor (e.g., Excessive Letter-spacing)</option>
+                            <option value="2">Level 2 - Concerning (e.g., Comic Sans Possession)</option>
+                            <option value="3">Level 3 - Serious (e.g., Multiple Font Violations)</option>
+                            <option value="4">Level 4 - Critical (e.g., Operating Font Speakeasy)</option>
+                            <option value="5">Level 5 - ████████ [REDACTED]</option>
+                        </select>
+                    </div>
+                </section>
+
+                <!-- Incident Details -->
+                <section class="form-section">
+                    <h2 class="section-header">INCIDENT DETAILS</h2>
+                    <div class="form-group">
+                        <label for="location">Location of Violation:</label>
+                        <input type="text" id="location" placeholder="e.g., Wallington-Mart Parking Lot" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date">Date of Incident:</label>
+                        <input type="date" id="date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Unauthorized Fonts Involved:</label>
+                        <div class="checkbox-grid">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="comic-sans" name="fonts" value="comic-sans">
+                                <label for="comic-sans">Comic Sans MS</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="papyrus" name="fonts" value="papyrus">
+                                <label for="papyrus">Papyrus</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="wingdings" name="fonts" value="wingdings">
+                                <label for="wingdings">Wingdings</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="times" name="fonts" value="times">
+                                <label for="times">Times New Roman [LEGACY]</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="helvetica" name="fonts" value="helvetica">
+                                <label for="helvetica">Helvetica [CONTRABAND]</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="custom" name="fonts" value="custom">
+                                <label for="custom">Custom/Unknown Typography</label>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Suspect Information -->
+                <section class="form-section">
+                    <h2 class="section-header">SUSPECT INFORMATION</h2>
+                    <div class="form-group">
+                        <label for="suspect-behavior">Observed Typography Behavior:</label>
+                        <textarea id="suspect-behavior" rows="4" placeholder="Describe suspicious typographic activity..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Known Affiliations:</label>
+                        <div class="checkbox-grid">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="prog" name="affiliation" value="prog">
+                                <label for="prog">PROG™ Association</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="helvetica" name="affiliation" value="helvetica">
+                                <label for="helvetica">Helvetica Underground</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="serif" name="affiliation" value="serif">
+                                <label for="serif">Serif Witnesses</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="league" name="affiliation" value="league">
+                                <label for="league">League of Justified Composition</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="masters" name="affiliation" value="masters">
+                                <label for="masters">Ascended Masters of Moveable Type</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="unknown" name="affiliation" value="unknown">
+                                <label for="unknown">Unknown/Suspected Affiliation</label>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Enforcement Response -->
+                <section class="form-section">
+                    <h2 class="section-header">ENFORCEMENT RESPONSE</h2>
+                    <div class="form-group">
+                        <label for="action-taken">Action Taken:</label>
+                        <select id="action-taken" required>
+                            <option value="">Select Action</option>
+                            <option value="warning">Written Warning Issued</option>
+                            <option value="confiscation">Font Confiscation</option>
+                            <option value="reeducation">Mandatory Re-education</option>
+                            <option value="djk">Deangelo Jarvislandry Khalid Intervention</option>
+                            <option value="bronco">White Ford Bronco Deployment</option>
+                            <option value="redacted">████████ [CLASSIFIED]</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="evidence">Evidence Collection:</label>
+                        <div class="file-upload">
+                            <input type="file" id="evidence" accept=".ttf,.otf,.pdf">
+                            <div class="upload-label">Upload Typography Evidence</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Reporting Officer -->
+                <section class="form-section">
+                    <h2 class="section-header">REPORTING OFFICER</h2>
+                    <div class="form-group">
+                        <label for="officer-id">Officer ID:</label>
+                        <input type="text" id="officer-id" pattern="[A-Z]-[0-9]{4}-[A-Z]{3}" placeholder="Format: X-0000-XXX" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="clearance">Typographic Clearance Level:</label>
+                        <input type="text" id="clearance" value="TS-█████" readonly>
+                    </div>
+                </section>
+
+                <div class="form-actions">
+                    <button type="submit" class="submit-button">SUBMIT REPORT</button>
+                    <button type="reset" class="reset-button">CLEAR FORM</button>
+                </div>
+            </form>
+        </main>
+    </div>
+
+    <script>
+        // Add scan lines
+        for(let i = 0; i < 3; i++) {
+            const scanLine = document.createElement('div');
+            scanLine.className = 'scan-line';
+            scanLine.style.animationDelay = `${i * 1}s`;
+            document.body.appendChild(scanLine);
+        }
+    </script>
+</body>
+</html> 
